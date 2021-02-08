@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 async function connect(){
     
     try {
-        await mongoose.connect('mongodb+srv://sangphamyn:rBKaCVfXX21hHpVp@cluster0.tksur.mongodb.net/test', {
+        await mongoose.connect('mongodb+srv://sangphamyn:rBKaCVfXX21hHpVp@cluster0.tksur.mongodb.net/premier_league_football_club', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true
