@@ -1,0 +1,210 @@
+$prime-color: #808080;
+$hover-color: orange;
+* {
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: content-box;
+}
+
+body {
+  width: 100%;
+}
+
+a{
+	cursor: pointer;
+}
+.menu{
+	a{
+		font-size: 1.5rem;
+		transition: .2s;
+		&:hover{
+			color: #31ff31 !important;
+			transition: .2s;
+		}
+	}
+	.menu-icon{
+		i{
+			font-size: 1.8rem;
+			position: relative;
+			cursor: pointer;
+			transition: .2s;
+			span{
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 15px;
+				width: 15px;
+				font-size: .8rem;
+				line-height: 15px;
+				display: inline-block;
+			}
+			&:hover {
+				color: #31ff31;
+				transition: .2s;
+			}
+		}
+	}
+}
+
+.side{
+    transition: .5s;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 100000;
+    width: 340px;
+    height: 100%;
+    transform: translateX(100%);
+    .mini-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid #81818133;
+        border-top: 1px solid #81818133;
+        padding: .5rem 1rem;
+        align-items: center;
+        h3{
+            margin: 0;
+            font-size: 16px;
+        }
+        i{
+            font-size: 50px;
+            cursor: pointer;
+            transition: .3s;
+            &:hover {
+                transform: rotate(180deg);
+                transition: .3s;
+            }
+        }
+    }
+}
+.side-transform{
+    transform: translateX(0) !important;
+}
+
+.login, .register, .recover-pw{
+    .login-body{
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        .form-row{
+            display: flex;
+            flex-direction: column;
+            color: $prime-color;
+            margin-bottom: 2rem;
+            input{
+                width: 100%;
+                box-sizing: border-box;
+                border: 1px solid #d5d5d5;
+                height: 40px;
+                padding: 0 1rem;
+            }
+            label{
+                span{
+                    color: red;
+                }
+                margin-bottom: 1rem;
+            }
+        }
+        >input{
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            background: $hover-color;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            &:hover{
+                opacity: .8;
+            }
+        }
+        p{
+            margin-top: 2rem;
+            color: $prime-color;
+            a{
+                transition: .2s;
+                &:hover{
+                    color: $prime-color;
+                    transition: .2s;
+                }
+            }
+        }
+    }
+}
+.mark{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8) !important;
+	position: fixed;
+	top: 0;
+	display: none;
+	z-index: 10;
+}
+.show-mark{
+	display: block;
+}
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: #76e288;
+}
+
+.bg-main{
+    background-image: url('../img/premier-league-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 95vh;
+    position: fixed;
+    bottom: 0;
+    z-index: -10;
+    h2,h4{
+        color:#fdba01;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+    a{
+
+    }
+}
+.button-effect {
+    padding: 1rem 2rem;
+    border: 0;
+    color: white;
+    background-color: white;
+    background-color: var(--primary);
+    text-transform: uppercase;
+    transition: padding 0.25s linear;
+    text-align: center;
+    position: relative;
+    i{
+        font-size: 2rem;
+    }
+}
+.button-effect:hover {
+    padding-right: 5rem;
+}
+.button-effect i {
+    transition: 0.25s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+}
+.button-effect:hover i {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+p{
+    font-size: 1.3rem;
+}

@@ -1,0 +1,69 @@
+<div class="container mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">STT</th>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {{#each fbClubs}}
+
+                <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td><img src="{{this.logo}}" style="width: auto; height: 30px"></td>
+                <td><a href="/all-fb-club/{{this.slug}}">{{this.name}}</a></td>
+                <td>{{this.location}}</td>
+                <td>
+                    <a href="/tt/{{this._id}}/edit" type="button" class="btn btn-outline-success">Edit</a>
+                    <a type="button" class="btn btn-outline-danger" data-id="{{this._id}}" data-toggle="modal" data-target="#delete">Delete</a>
+                </td>
+                </tr>
+
+            {{/each}}
+
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete this football club </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form method="POST" name="delete-form"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var fcId;
+        var deleteForm = document.forms['delete-form'];
+
+        $('#delete').on('show.bs.modal', function(event){
+            var button = $(event.relatedTarget)
+            fcId = button.data('id')
+        })
+        $('#btn-delete').click(function(){
+            deleteForm.action = '/tt/' + fcId +'/?_method=DELETE';
+            deleteForm.submit();
+        })
+    })
+</script>

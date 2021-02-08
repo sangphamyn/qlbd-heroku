@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <h2>EDIT A FOOTBALL CLUB</h2>
+    <form method="POST" action="/tt/{{fbClub._id}}?_method=PUT">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{fbClub.name}}">
+        </div>
+        <div class="form-group">
+            <label for="logo">Logo</label>
+            <div class="row">
+                <img class="col-4" src="{{fbClub.logo}}" style="max-width: 60px; height: auto">
+                <input class="col-8" type="text" class="form-control" id="logo" name="logo" value="{{fbClub.logo}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="coach">Coach</label>
+            <input type="text" class="form-control" id="coach" name="coach" value="{{fbClub.coach}}">
+        </div>
+        <div class="form-group">
+            <label for="stadium">Stadium</label>
+            <input type="text" class="form-control" id="stadium" name="stadium" value="{{fbClub.stadium}}">
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" value="{{fbClub.location}}">
+        </div>
+        <div class="form-group">
+            <label for="youtubeID">Youtube ID</label>
+            <input type="text" class="form-control" id="youtubeID" name="youtubeID" value="{{fbClub.youtubeID}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
