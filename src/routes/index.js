@@ -7,7 +7,6 @@ const homeRouter = require('./home');
 function route(app){
     app.use('/create', createRouter);
     app.use('/all-fb-club', allFootballClub);
-    app.use('/all-fb-club', footballClub);
     app.use('/tt', ttRouter);
     app.use('/', homeRouter);
 }
