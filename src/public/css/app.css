@@ -238,4 +238,6 @@ p {
   .login-block i div {
     display: block !important; }
   .bg-main {
-    padding-bottom: 20rem !important; } }
+    padding-bottom: 20rem !important; }
+  .side {
+    width: 340px; } }
