@@ -19,4 +19,9 @@ $(document).ready(function(){
 		$('.side-transform').removeClass('side-transform');
 		$('.login').addClass('side-transform');
 	})
+	$('.menu-icon').click(function(){
+		$('.side-transform').removeClass('side-transform');
+		$('.menu-responsive').addClass('side-transform');
+		$('.mark').addClass('show-mark');
+	})
 })

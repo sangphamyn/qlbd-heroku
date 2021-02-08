@@ -9,8 +9,8 @@
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "mongodb": "^3.6.3",
-    "mongoose-slug-generator": "^1.0.4",
     "mongoose": "^5.11.15",
+    "mongoose-slug-generator": "^1.0.4",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0"
   },
@@ -27,6 +27,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass -w src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "greenboy",
