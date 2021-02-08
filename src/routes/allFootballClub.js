@@ -8,4 +8,3 @@ router.get('/:slug', footballClubController.show);
 router.get('/', allFootballClub.index);
 
 module.exports = router;
-
