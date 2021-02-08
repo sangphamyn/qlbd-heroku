@@ -11,7 +11,7 @@ class FootballClubController{
                     footballClub: mongooseToObject(footballClub)
                 })
             })
-            .catch(next);
+            .catch(next)
     }
 
 
