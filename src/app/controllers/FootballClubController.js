@@ -7,8 +7,7 @@ class FootballClubController{
     show(req, res, next) {
         FootballClub.findOne({ slug: req.params.slug })
             .then(footballClub => {
-                res.send('sang');
-                //res.render('footballClub/show', { footballClub: mongooseToObject(footballClub) });
+                res.render('footballClub/show', { footballClub: mongooseToObject(footballClub) });
             })
             .catch(next);
     }
