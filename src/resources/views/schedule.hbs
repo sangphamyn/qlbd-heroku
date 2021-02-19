@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="mt-2">
+        <div class="row">
+
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr class="bg-success text-white">
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Team A</th>
+                    <th scope="col">Team B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each match}}
+                        <tr>
+                            {{#if this.match_day_check_1}}
+                                <td>{{this.date}}</td>
+                                <td>{{this.time}}</td>
+                                <td class="text-center">{{this.team_a}}</td>
+                                <td class="text-center">{{this.team_b}}</td>
+                            {{/if}}
+                            {{#if this.match_day_check_2}}
+                                <td colspan="4" class="text-center" style="background: #9bf79d;">{{this.match_day}}</td>
+                            {{/if}}
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
