@@ -27,5 +27,6 @@ $(document).ready(function(){
 	var tds = document.getElementsByTagName('td');
 	for(td of tds){
 		if(td.textContent == 'Manchester United') td.classList.add('mu');
+		if(td.textContent == 'Manchester City') td.classList.add('mancity');
 	}
 })
