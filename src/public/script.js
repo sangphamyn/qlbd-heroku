@@ -24,4 +24,8 @@ $(document).ready(function(){
 		$('.menu-responsive').addClass('side-transform');
 		$('.mark').addClass('show-mark');
 	})
+	var tds = document.getElementsByTagName('td');
+	for(td of tds){
+		if(td.textContent == 'Manchester United') td.classList.add('mu');
+	}
 })
