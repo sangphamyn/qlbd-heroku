@@ -6,9 +6,9 @@ const homeRouter = require('./home');
 const scheduleRouter = require('./schedule');
 
 function route(app){
-    app.use('/create', createRouter);
+    app.use('/manager/add', createRouter);
     app.use('/all-fb-club', allFootballClub);
-    app.use('/tt', ttRouter);
+    app.use('/manager', ttRouter);
     app.use('/schedule', scheduleRouter);
     app.use('/', homeRouter);
 }
