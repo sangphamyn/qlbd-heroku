@@ -34,7 +34,7 @@ class ttController{
     // [PUT] /tt/:id
     update(req, res, next) {
         FootballClub.updateOne({ _id: req.params.id }, req.body)
-            .then(() => res.redirect('/tt'))
+            .then(() => res.redirect('/manager'))
             .catch(next)
     }
 

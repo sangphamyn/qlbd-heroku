@@ -22,7 +22,7 @@
                 <td><a href="/all-fb-club/{{this.slug}}">{{this.name}}</a></td>
                 <td class="location">{{this.location}}</td>
                 <td>
-                    <a href="/tt/{{this._id}}/edit" type="button" class="btn btn-outline-success mt-1" style="width: 80px;">Edit</a>
+                    <a href="/manager/{{this._id}}/edit" type="button" class="btn btn-outline-success mt-1" style="width: 80px;">Edit</a>
                     <a type="button" class="btn btn-outline-danger mt-1" style="width: 80px;" data-id="{{this._id}}" data-toggle="modal" data-target="#delete">Delete</a>
                 </td>
                 </tr>
@@ -65,7 +65,7 @@
             fcId = button.data('id')
         })
         $('#btn-delete').click(function(){
-            deleteForm.action = '/tt/' + fcId +'/?_method=DELETE';
+            deleteForm.action = '/manager/' + fcId +'/?_method=DELETE';
             deleteForm.submit();
         })
     })
