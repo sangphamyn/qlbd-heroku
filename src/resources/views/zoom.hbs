@@ -1,4 +1,7 @@
 <div class="container zoom">
+    <div class="alert alert-info my-3" role="alert">
+        <h3 class="text-center">Tìm Id và password Zoom theo phòng</h3>
+    </div>
     <div class="my-4 building">
         <button type="button" class="btn btn-primary" value="2">C2</button>
         <button type="button" class="btn btn-secondary" value="4">C4</button>
@@ -9,14 +12,21 @@
 
     </div>
     <div class="id d-none">
-        <h3 class="title"></h3>
+        <h3 class="title alert alert-warning text-center"></h3>
+        <div class="alert alert-danger notice d-none" role="alert">
+        Đã coppy thành công!
+    </div>
         <div class="row">
-            <p class="m-0 w-25">Zoom ID: </p><p id="zoomid" class="m-0"></p>
-            <button type="button" class="btn btn-link coppyID">Copy ID</button>
+            <p class="col-3"></p>
+            <p class="m-0 col-2">Zoom ID: </p><p id="zoomid" class="m-0 col-1"></p>
+            <button type="button" class="btn btn-link coppyID col-2">Copy ID</button>
+            <p class="col-4"></p>
         </div>
         <div class="row">
-            <p class="m-0 w-25">Zoom password: </p><p id="zoompw" class="m-0"></p>
-            <button type="button" class="btn btn-link coppyPW">Copy PW</button>
+            <p class="col-3"></p>
+            <p class="m-0 col-2">Zoom password: </p><p id="zoompw" class="m-0 col-1"></p>
+            <button type="button" class="btn btn-link coppyPW col-2">Copy PW</button>
+            <p class="col-4"></p>
         </div>
     </div>
 </div>
@@ -48,7 +58,7 @@ $(document).ready(function(){
                 var val;
                 for(var i=0;i<c2.length;i++){
                     val = c2[i];
-                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-2" style="width: 65px;" value="${i}">${val}</button>`);
                 }
                 $('.room button').click(function(){
                     var index = $(this).val();
@@ -63,12 +73,12 @@ $(document).ready(function(){
                 var val;
                 for(var i=0;i<c4.length;i++){
                     val = c4[i];
-                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-2" style="width: 65px;" value="${i}">${val}</button>`);
                 }
                 $('.room button').click(function(){
                     var index = $(this).val();
                     $('#zoomid').text(`${id_c4[index]}`);
-                    $('#zoompw').text(`ictu2${c4[index]}`);
+                    $('#zoompw').text(`ictu4${c4[index]}`);
                     $('.id .title').text(`Giảng đường C4 - Phòng ${c4[index]}`);
                     $('.id').addClass('d-block');
                 })
@@ -78,12 +88,12 @@ $(document).ready(function(){
                 var val;
                 for(var i=0;i<c5.length;i++){
                     val = c5[i];
-                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-2" style="width: 65px;" value="${i}">${val}</button>`);
                 }
                 $('.room button').click(function(){
                     var index = $(this).val();
                     $('#zoomid').text(`${id_c5[index]}`);
-                    $('#zoompw').text(`ictu2${c5[index]}`);
+                    $('#zoompw').text(`ictu5${c5[index]}`);
                     $('.id .title').text(`Giảng đường C5 - Phòng ${c5[index]}`);
                     $('.id').addClass('d-block');
                 })
@@ -93,12 +103,12 @@ $(document).ready(function(){
                 var val;
                 for(var i=0;i<c6.length;i++){
                     val = c6[i];
-                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-2" style="width: 65px;" value="${i}">${val}</button>`);
                 }
                 $('.room button').click(function(){
                     var index = $(this).val();
                     $('#zoomid').text(`${id_c6[index]}`);
-                    $('#zoompw').text(`ictu2${c6[index]}`);
+                    $('#zoompw').text(`ictu6${c6[index]}`);
                     $('.id .title').text(`Giảng đường C6 - Phòng ${c6[index]}`);
                     $('.id').addClass('d-block');
                 })
@@ -108,16 +118,13 @@ $(document).ready(function(){
     })
 
 
-
-
-
-
     $('.coppyID').click(function(){
         var $temp = $("<input>");
         $("body").append($temp);
         $temp.val($('#zoomid').text()).select();
         document.execCommand("copy");
         $temp.remove();
+        //$('.notice').addClass('d-block');
     })
     $('.coppyPW').click(function(){
         var $temp = $("<input>");

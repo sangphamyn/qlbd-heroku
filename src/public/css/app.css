@@ -12,7 +12,7 @@ a {
   cursor: pointer; }
 
 .menu a {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   transition: .2s; }
   .menu a:hover {
     color: #31ff31 !important;
@@ -258,3 +258,17 @@ p {
     height: 75px;
     font-size: 2rem;
     font-weight: 800; }
+
+.zoom .room {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap; }
+
+.zoom .notice {
+  position: absolute;
+  bottom: 0;
+  right: 20%; }
+
+.zoom .id {
+  position: relative; }
