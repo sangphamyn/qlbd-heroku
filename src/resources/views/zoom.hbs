@@ -1,0 +1,130 @@
+<div class="container zoom">
+    <div class="my-4 building">
+        <button type="button" class="btn btn-primary" value="2">C2</button>
+        <button type="button" class="btn btn-secondary" value="4">C4</button>
+        <button type="button" class="btn btn-success" value="5">C5</button>
+        <button type="button" class="btn btn-danger" value="6">C6</button>
+    </div>
+    <div class="room">
+
+    </div>
+    <div class="id d-none">
+        <h3 class="title"></h3>
+        <div class="row">
+            <p class="m-0 w-25">Zoom ID: </p><p id="zoomid" class="m-0"></p>
+            <button type="button" class="btn btn-link coppyID">Copy ID</button>
+        </div>
+        <div class="row">
+            <p class="m-0 w-25">Zoom password: </p><p id="zoompw" class="m-0"></p>
+            <button type="button" class="btn btn-link coppyPW">Copy PW</button>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    var c2 = [101, 104, 201, 202, 203, 301, 302, 303, 304];
+    var id_c2 = [9676047444, 4857951122, 3621784686, 5368913024, 7659082261, 6808631727, 2731295791, 7702401297, 9480459400];
+    var c4 = [101, 102, 201, 202, 203, 301, 302];
+    var id_c4 = [2883294056, 4213338621, 6730542252, 8644868946, 3788779811, 9131849500, 6934179985];
+    var c5 = [101, 102, 103, 104, 106, 201, 202, 204, 205, 206, 207, 301, 302, 303, 304, 401, 402, 404, 405, 501, 502, 503, 504];
+    var id_c5 = [8467190414, 5932534071, 7766760595, 6377673665, 5180486349, 4956417793, 7020678347, 2545058902, 8073276935, 7605020984, 7086915421, 9415629187, 2052390645, 9104945055, 6268594687, 4305093454, 6029649949, 8848625597, 8509977986, 4493196325, 2042463588, 7245613121, 3708173651];
+    var c6 = [202, 203, 301, 302, 306, 606, 607, 666];
+    var id_c6 = [7800973599, 5011591184, 3069521310, 3955812828, 8741620614, 4246008842, 3481556119, 6988067468
+];
+    var val_flag = 0;
+    $('.building button').click(function(){
+        var toa = $(this).val();
+        if(val_flag == toa){
+            $('.room').empty();
+            $('.id').removeClass('d-block');
+            val_flag = 0;
+        }
+        else {
+            val_flag = toa;
+            $('.room').empty();
+            $('.id').removeClass('d-block');
+            if(toa == 2){
+                var val;
+                for(var i=0;i<c2.length;i++){
+                    val = c2[i];
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                }
+                $('.room button').click(function(){
+                    var index = $(this).val();
+                    $('#zoomid').text(`${id_c2[index]}`);
+                    $('#zoompw').text(`ictu2${c2[index]}`);
+                    $('.id .title').text(`Giảng đường C2 - Phòng ${c2[index]}`);
+                    $('.id').addClass('d-block');
+                })
+            }
+
+            if(toa == 4){
+                var val;
+                for(var i=0;i<c4.length;i++){
+                    val = c4[i];
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                }
+                $('.room button').click(function(){
+                    var index = $(this).val();
+                    $('#zoomid').text(`${id_c4[index]}`);
+                    $('#zoompw').text(`ictu2${c4[index]}`);
+                    $('.id .title').text(`Giảng đường C4 - Phòng ${c4[index]}`);
+                    $('.id').addClass('d-block');
+                })
+            }
+
+            if(toa == 5){
+                var val;
+                for(var i=0;i<c5.length;i++){
+                    val = c5[i];
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                }
+                $('.room button').click(function(){
+                    var index = $(this).val();
+                    $('#zoomid').text(`${id_c5[index]}`);
+                    $('#zoompw').text(`ictu2${c5[index]}`);
+                    $('.id .title').text(`Giảng đường C5 - Phòng ${c5[index]}`);
+                    $('.id').addClass('d-block');
+                })
+            }
+
+            if(toa == 6){
+                var val;
+                for(var i=0;i<c6.length;i++){
+                    val = c6[i];
+                    $('.room').append(`<button type="button" class="btn btn-outline-success m-4" style="width: 65px;" value="${i}">${val}</button>`);
+                }
+                $('.room button').click(function(){
+                    var index = $(this).val();
+                    $('#zoomid').text(`${id_c6[index]}`);
+                    $('#zoompw').text(`ictu2${c6[index]}`);
+                    $('.id .title').text(`Giảng đường C6 - Phòng ${c6[index]}`);
+                    $('.id').addClass('d-block');
+                })
+            }
+        }
+
+    })
+
+
+
+
+
+
+    $('.coppyID').click(function(){
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($('#zoomid').text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    })
+    $('.coppyPW').click(function(){
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($('#zoompw').text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    })
+})
+</script>

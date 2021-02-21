@@ -317,3 +317,18 @@ p{
 .mancity{
     color: rgb(29, 172, 255);
 }
+
+.zoom{
+    .building{
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        button{
+            width: 20%;
+            height: 75px;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+    }
+}
