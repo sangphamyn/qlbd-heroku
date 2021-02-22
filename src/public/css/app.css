@@ -264,11 +264,13 @@ p {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap; }
-
-.zoom .notice {
-  position: absolute;
-  bottom: 0;
-  right: 20%; }
+  .zoom .room button {
+    font-weight: 800; }
 
 .zoom .id {
   position: relative; }
+  .zoom .id .notice {
+    position: absolute;
+    top: 50px;
+    right: 50%;
+    transform: translateX(50%); }

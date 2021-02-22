@@ -336,13 +336,17 @@ p{
         flex-direction: row;
         justify-content: flex-start;
         flex-wrap: wrap;
-    }
-    .notice{
-        position: absolute;
-        bottom: 0;
-        right: 20%;
+        button{
+            font-weight: 800;
+        }
     }
     .id{
         position: relative;
+        .notice{
+            position: absolute;
+            top: 50px;
+            right: 50%;
+            transform: translateX(50%);
+        }
     }
 }
