@@ -14,15 +14,10 @@
                 <tbody>
                     {{#each match}}
                         <tr>
-                            {{#if this.match_day_check_1}}
-                                <td>{{this.date}}</td>
-                                <td>{{this.time}}</td>
-                                <td class="text-center">{{this.team_a}}</td>
-                                <td class="text-center">{{this.team_b}}</td>
-                            {{/if}}
-                            {{#if this.match_day_check_2}}
-                                <td colspan="4" class="text-center" style="background: #9bf79d;">{{this.match_day}}</td>
-                            {{/if}}
+                            <td class="text-center">{{this.datepr}}</td>
+                            <td class="text-center">{{this.timepr}}</td>
+                            <td class="text-center">{{this.team_A}}</td>
+                            <td class="text-center">{{this.team_B}}</td>
                         </tr>
                     {{/each}}
                 </tbody>
