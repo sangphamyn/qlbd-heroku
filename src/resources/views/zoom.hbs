@@ -114,8 +114,11 @@ $(document).ready(function(){
                     var index = $(this).val();
                     $('#zoomid').text(`${id_c6[index]}`);
                     $('#zoompw').text(`ictu6${c6[index]}`);
-                    if(index == 7) $('#zoompw').text(`ictu6khdl`);
                     $('.id .title').text(`Giảng đường C6 - Phòng ${c6[index]}`);
+                    if(index == 7){
+                        $('#zoompw').text(`ictu6khdl`);
+                        $('.id .title').text(`Giảng đường C6 - Phòng KHDL`);
+                    }
                     $('.id').addClass('d-block');
                 })
             }
