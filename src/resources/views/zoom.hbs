@@ -77,6 +77,14 @@ $(document).ready(function(){
                     $('.id').addClass('d-block');
                     $('.link').attr("href", `${link_c2[index]}`);
                     $('.link').text(`${link_c2[index]}`);
+                    if(link_c2[index] == ''){
+                        $('.linkzoom').hide();
+                    }
+                    else{
+                        $('.linkzoom').show();
+                        $('.link').attr("href", `${link_c2[index]}`);
+                        $('.link').text(`${link_c2[index]}`);
+                    }
                 })
             }
 
@@ -94,6 +102,14 @@ $(document).ready(function(){
                     $('.id').addClass('d-block');
                     $('.link').attr("href", `${link_c4[index]}`);
                     $('.link').text(`${link_c4[index]}`);
+                    if(link_c4[index] == ''){
+                        $('.linkzoom').hide();
+                    }
+                    else{
+                        $('.linkzoom').show();
+                        $('.link').attr("href", `${link_c4[index]}`);
+                        $('.link').text(`${link_c4[index]}`);
+                    }
                 })
             }
 
@@ -141,6 +157,14 @@ $(document).ready(function(){
                     $('.id').addClass('d-block');
                     $('.link').attr("href", `${link_c6[index]}`);
                     $('.link').text(`${link_c6[index]}`);
+                    if(link_c6[index] == ''){
+                        $('.linkzoom').hide();
+                    }
+                    else{
+                        $('.linkzoom').show();
+                        $('.link').attr("href", `${link_c6[index]}`);
+                        $('.link').text(`${link_c6[index]}`);
+                    }
                 })
             }
         }
