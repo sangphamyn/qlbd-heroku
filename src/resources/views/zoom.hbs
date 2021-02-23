@@ -19,6 +19,10 @@
             </div>
         </div>
         <div class="row">
+            <p class="m-0 col-lg-3">Link: </p><a class="link col-7" target="_blank"></a>
+            <button type="button" class="btn btn-link coppylink col-lg-2">Copy link</button>
+        </div>
+        <div class="row">
             <p class="col-3"></p>
             <p class="m-0 col-lg-2">Zoom ID: </p><p id="zoomid" class="m-0 col-12 col-lg-1 text-center"></p>
             <button type="button" class="btn btn-link coppyID col-lg-2">Copy ID</button>
@@ -41,6 +45,7 @@ $(document).ready(function(){
     var id_c4 = [2883294056, 4213338621, 6730542252, 8644868946, 3788779811, 9131849500, 6934179985];
     var c5 = [101, 102, 103, 104, 106, 201, 202, 204, 205, 206, 207, 301, 302, 303, 304, 401, 402, 404, 405, 501, 502, 503, 504];
     var id_c5 = [8467190414, 5932534071, 7766760595, 6377673665, 5180486349, 4956417793, 7020678347, 2545058902, 8073276935, 7605020984, 7086915421, 9415629187, 2052390645, 9104945055, 6268594687, 4305093454, 6029649949, 8848625597, 8509977986, 4493196325, 2042463588, 7245613121, 3708173651];
+    var link_c5 = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'https://zoom.us/j/8848625597?pwd=MGlnYWJyaXJ3LzBkUjFPeCtjN2dZQT09', '', '', '', '', ''];
     var c6 = [202, 203, 301, 302, 306, 606, 607, 666];
     var id_c6 = [7800973599, 5011591184, 3069521310, 3955812828, 8741620614, 4246008842, 3481556119, 6988067468
 ];
@@ -98,6 +103,8 @@ $(document).ready(function(){
                     $('#zoompw').text(`ictu5${c5[index]}`);
                     $('.id .title').text(`Giảng đường C5 - Phòng ${c5[index]}`);
                     $('.id').addClass('d-block');
+                    $('.link').attr("href", `${link_c5[index]}`);
+                    $('.link').text(`${link_c5[index]}`);
                 })
             }
 
@@ -133,7 +140,14 @@ $(document).ready(function(){
         $temp.val($('#zoomid').text()).select();
         document.execCommand("copy");
         $temp.remove();
-        //$('.notice').addClass('d-block');
+        $('.toast').toast('show');
+    })
+    $('.coppylink').click(function(){
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($('.link').text()).select();
+        document.execCommand("copy");
+        $temp.remove();
         $('.toast').toast('show');
     })
     $('.coppyPW').click(function(){
