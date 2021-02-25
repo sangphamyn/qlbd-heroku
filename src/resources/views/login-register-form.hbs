@@ -1,0 +1,164 @@
+
+<div class="form">
+    <ul class="tab-group">
+            <li class="tab" data-target="#signup">
+                <a>Sign up</a>
+            </li>
+            <li class="tab active" data-target="#login">
+                <a>Log in</a>
+            </li>
+    </ul>
+    <div class="tab-content">
+        <div id="signup" class="content">
+            <h1>Sign Up for Free</h1>
+            <form action="/" method="post">
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            First Name<span>*</span>
+                        </label>
+                        <input type="text" name="first_name">
+                        <div class="message">* Khong duoc bo trong</div>
+                    </div>
+                    <div class="field-wrap">
+                        <label>
+                            Last Name<span>*</span>
+                        </label>
+                        <input type="text" name="last_name">
+                        <div class="message">* Khong duoc bo trong</div>
+                    </div> 
+                </div>
+                <div class="field-wrap">
+                    <label>Email<span>*</span></label>
+                    <input class="mail" type="email" name="email">
+                    <div class="message">* Khong duoc bo trong</div>
+                    <span class="popuptext" id="myPopup">Mail khong hop le!!!</span>
+                </div>
+                <div class="field-wrap">
+                    <label>Password<span>*</span></label>
+                    <input type="password" name="password">
+                    <div class="message">* Khong duoc bo trong</div>
+                </div>
+                <button type="button">Get Started</button>
+                
+                <div class="info"><!--hien thi thong tin da nhap-->
+                    <div class="info_show">First name: <p class="show_firstName"></p></div>
+                    <div class="info_show">Last name: <p class="show_lastName"></p></div>
+                    <div class="info_show">Email: <p class="show_email"></p></div>
+                    <div class="info_show">Password: <p class="show_password"></p></div>
+                    <span class="close">&times;</span>
+                </div>
+                
+            </form>
+        </div>
+        <div id="login" class="content show">
+            <h1>Welcome Back!</h1>
+            <form action="/" method="post">
+                <div class="field-wrap">
+                    <label>Email Address<span>*</span></label>
+                    <input class="mail" type="email" name="email">
+                    <div class="message">* Khong duoc bo trong</div>
+                    <span class="popuptext" id="myPopup">Mail khong hop le!!!</span>
+                </div>
+                <div class="field-wrap">
+                    <label>Password<span>*</span></label>
+                    <input type="password" name="password">
+                    <div class="message">* Khong duoc bo trong</div>
+                </div>
+                <p class="forgot">
+                    <a href="#0">Forgot Password?</a>
+                </p>
+                <button type="button">LOG IN</button>
+                
+                <div class="info"><!--hien thi thong tin da nhap-->
+                    <div class="info_show">Email: <p class="show_email"></p></div>
+                    <div class="info_show">Password: <p class="show_password"></p></div>
+                    <span class="close">&times;</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    //Chuyen tabs
+(function(){
+    
+    function handleClick(event){
+        this.parentElement.querySelector('li.active').classList.remove('active');
+        this.classList.add('active');
+        let a = this.dataset.target;
+        var b = document.querySelector(a).getAttribute('class');
+        document.querySelector('.show').classList.remove('show');
+        document.querySelector(a).classList.add('show');
+        
+    }
+
+    var tabs = document.querySelectorAll('.tab');
+    for ( tab of tabs ){
+        tab.addEventListener('click', handleClick);
+    }   
+})()
+///////////////
+    var inputs = document.querySelectorAll('input');
+
+    function handleEnter(){
+        this.parentElement.querySelector('label').classList.add('label-act');
+        this.parentElement.querySelector('span').classList.add('req');
+        if(this.value==""){
+            this.parentElement.querySelector('label').classList.remove('label-act');
+            this.parentElement.querySelector('span').classList.remove('req');
+        }
+                this.parentElement.querySelector('.show-mess').classList.remove('show-mess');
+    }
+    for ( input of inputs ){
+        input.addEventListener('keyup', handleEnter);
+    }
+///////////////
+    var mails = document.querySelectorAll('.mail');
+    function handleSubmit(){
+        var inputs1 = this.parentElement.querySelectorAll('input');
+        var kt = 1;
+        for ( input of inputs1 ){
+            if (input.value==""){
+                input.parentElement.querySelector('.message').classList.add('show-mess');
+                kt=0;
+            }
+            else input.parentElement.querySelector('.message').classList.remove('show-mess');
+        }
+        var at = this.parentElement.querySelector('.mail').value.indexOf("@");
+        var lastName = document.querySelector('[name="last_name"]').value;
+        var firstName = document.querySelector('[name="first_name"]').value;
+        var email = this.parentElement.querySelector('[name="email"]').value;
+        var password = this.parentElement.querySelector('[name="password"]').value;
+        
+        var popup = this.parentElement.querySelector('.popuptext');
+        var info = this.parentElement.querySelector('.info');
+        
+        this.parentElement.querySelector('.show_email').innerHTML = email;
+        this.parentElement.querySelector('.show_email').style.color="lawngreen";
+        popup.style.visibility="hidden";
+            if ( at == -1 ){
+                popup.style.visibility="visible";
+                kt=0;
+            }
+            if (kt) info.style.display="block";
+            else info.style.display="none";
+        
+        this.parentElement.querySelector('.show_password').innerHTML = password;
+        this.parentElement.querySelector('.show_firstName').innerHTML = firstName;
+        this.parentElement.querySelector('.show_lastName').innerHTML = lastName;
+    }
+
+
+//
+    var submits = document.querySelectorAll('button');
+    submits[0].addEventListener('click', handleSubmit);
+    submits[1].addEventListener('click', handleSubmit);
+
+    var closeButtons = document.getElementsByClassName('close');
+    for (a of closeButtons){
+        a.addEventListener('click', function(){
+            this.parentElement.style.display="none";
+        })
+    }
+</script>
