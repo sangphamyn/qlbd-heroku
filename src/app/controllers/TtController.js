@@ -27,7 +27,8 @@ class ttController{
     edit(req, res, next){
         FootballClub.findById(req.params.id)
             .then(fbClub => res.render('edit', {
-                fbClub: mongooseToObject(fbClub)
+                fbClub: mongooseToObject(fbClub),
+                name: req.session.name
             }))
     }
 

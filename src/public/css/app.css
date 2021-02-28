@@ -321,11 +321,6 @@ body {
   background: #1ab188;
   color: #fff; }
 
-h1 {
-  text-align: center;
-  color: #fff;
-  font-weight: 300; }
-
 .field-wrap {
   max-width: 100%;
   position: relative; }
@@ -342,15 +337,15 @@ h1 {
   flex-direction: row;
   justify-content: space-between; }
 
-label {
-  position: absolute;
-  color: #a0b3b0;
-  pointer-events: none;
-  left: 1rem;
-  top: 0.6rem;
-  font-size: 1.3rem;
-  transition: .5s; }
-
+/*label {
+    position: absolute;
+    color: #a0b3b0;
+    pointer-events: none;
+    left: 1rem;
+    top: 0.6rem;
+    font-size: 1.3rem;
+    transition: .5s;
+}*/
 input {
   display: block;
   background: none;

@@ -2,7 +2,9 @@
 class homeController{
     //[GET] 
     index(req, res){
-        res.render('zoom');
+        res.render('zoom',{
+            name: req.session.name
+        });
     }
 }
 

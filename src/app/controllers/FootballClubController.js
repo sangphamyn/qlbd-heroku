@@ -7,7 +7,8 @@ class FootballClubController{
     show(req, res, next) {
         FootballClub.findOne({ slug: req.params.slug })
             .then(footballClub => res.render('show', {
-                    footballClub: mongooseToObject(footballClub)
+                    footballClub: mongooseToObject(footballClub),
+                    name: req.session.name
                 }))
             .catch(next)
     }

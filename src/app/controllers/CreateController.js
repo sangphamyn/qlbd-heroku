@@ -3,7 +3,9 @@ const FootballClub = require('../models/FootballClub');
 class createController{
     // [GET] /create
     index(req, res){
-        res.render('create');
+        res.render('create',{
+            name: req.session.name
+        });
     }
     // [POST] /create/store
     store(req, res, next) {

@@ -52,7 +52,8 @@ class standingsController{
                     }
                 })
                 res.render('standings',{
-                    standings: standings
+                    standings: standings,
+                    name: req.session.name
                 })
             }
             else {

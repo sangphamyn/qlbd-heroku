@@ -31,6 +31,25 @@
 				</ul>
 			</nav>
 		</div>
+
+        <div class="d-flex align-items-center">
+            {{#unless name}}
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link text-white px-4 px-lg-5 py-4">Login/Register</a>
+                        </li>
+                    {{/unless}}
+                    {{#if name}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="pegk pe-7s-user" style="font-size: 1.5rem"></i>
+                            {{name}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="/logout" class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </li>
+                    {{/if}}
+        </div>
 	</div>
 
 	<div class="side login">

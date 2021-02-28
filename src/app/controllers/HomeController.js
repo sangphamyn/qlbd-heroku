@@ -4,7 +4,9 @@ const { multipleMongooseToObject } = require('../../util/mongoose');
 class homeController{
     //[GET] 
     index(req, res){
-        res.render('login-register-form');
+        res.render('home',{
+            name: req.session.name
+        });
     }
 }
 

@@ -97,9 +97,9 @@ class scheduleController{
                     match.push({team_A,team_B,datepr,timepr});
                 }
 
-                console.log(date);
                 res.render('schedule',{
-                    match: match
+                    match: match,
+                    name: req.session.name
                 })
             }
             else {

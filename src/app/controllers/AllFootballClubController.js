@@ -7,7 +7,8 @@ class allFootballClubController{
         FootballClub.find({}, function (err, footballClubs){
             if(!err) {
                 res.render('allFbClub', {
-                    footballClubs: multipleMongooseToObject(footballClubs)
+                    footballClubs: multipleMongooseToObject(footballClubs),
+                    name: req.session.name
                 })
             }
             else res.status(400).json({error: 'ERROR!!!'});

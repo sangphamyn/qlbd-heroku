@@ -5,8 +5,9 @@ const handlebars = require('express-handlebars');
 const route = require('./routes');
 const methodOverride = require('method-override');
 const port = Number(process.env.PORT || 3000);
+var session = require('express-session');
 const uri = process.env.MONGODB_URI;
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const db = require('./config/db');
